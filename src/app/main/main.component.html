@@ -1,0 +1,18 @@
+<select class="PageSelect" (change)="Select($event.target.value)">
+    <option value="" selected disabled hidden>מרחבים</option>
+    <option *ngFor="let merchav of merchavim " [value]='merchav'>
+         {{merchav}}
+    </option>
+</select>
+<select class="PageSelect" (change)="Select($event.target.value)">
+    <option value="" selected disabled hidden>אזורים</option>
+    <option *ngFor="let ezor of ezorim " [value]='ezor'>
+         {{ezor}}
+    </option>
+</select>
+<select class="PageSelect" (change)="Select($event.target.value)">
+    <option value="" selected disabled hidden>יישובים</option>
+    <option *ngFor="let yeshuv of yeshuvim " [value]='yeshuv'>
+         {{yeshuv}}
+    </option>
+</select>
