@@ -1,0 +1,107 @@
+.wrapQues {
+    /* padding: 1% 0 1% 0; */
+    /* background: repeating-linear-gradient(-55deg, #2cd5c4, #2cd5c4 12px, gray 14px, gray 14px); */
+    background: #ffffff;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+#test{
+text-align: center;
+font-weight: bold;
+}
+#title{
+    text-transform: uppercase;
+}
+#body{
+    font-size:small;
+}
+tr{
+    cursor: pointer;
+    box-shadow:  10px 10px 14px bisque;
+}
+td{
+    text-align: center;
+    cursor: pointer;
+}
+td{
+    cursor: pointer;
+}
+button{
+    height: 100%;
+    width: 100%;
+    background: bisque;
+    border: transparent;
+    cursor: pointer;
+    text-align: left;
+    font-weight: bold;
+    margin: 4% 30% 3% 30%;
+
+}
+button:hover{
+    height: 100%;
+    width: 100%;
+    background-color: bisque;
+    border: transparent;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    box-shadow:  10px 10px 14px bisque;
+}
+button:focus{
+    height: 100%;
+    width: 100%;
+    background-color: bisque;
+    border: transparent;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+.header{
+    background-color: bisque;
+    margin: 1% 1% 1% 1%;
+}
+
+table {
+    /* width: 100%; */
+    margin: 1% 5% 1% 5%;
+
+}
+a {
+    color: rgb(247, 155, 119);
+  }
+  
+  a:focus, a:hover
+  {
+      border: 1px solid royalblue;
+  }
+  .myselect{
+    height: 50%;
+    width: 50%;
+    background: #ffffff;
+    border: bisque 1px;
+    cursor: pointer;
+    text-align: right;
+    margin: 4% 1% 3% 1%;
+
+}
+.myselect:hover{
+    height: 50%;
+    width: 50%;
+    background-color: bisque;
+    border: bisque;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    box-shadow:  10px 10px 14px bisque;
+}
+.myselect:focus{
+    height: 50%;
+    width: 50%;
+    background-color: bisque;
+    border: bisque;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}

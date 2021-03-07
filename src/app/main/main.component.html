@@ -1,18 +1,82 @@
-<select class="PageSelect" (change)="Select($event.target.value)">
-    <option value="" selected disabled hidden>מרחבים</option>
-    <option *ngFor="let merchav of merchavim " [value]='merchav'>
-         {{merchav}}
-    </option>
-</select>
-<select class="PageSelect" (change)="Select($event.target.value)">
-    <option value="" selected disabled hidden>אזורים</option>
-    <option *ngFor="let ezor of ezorim " [value]='ezor'>
-         {{ezor}}
-    </option>
-</select>
-<select class="PageSelect" (change)="Select($event.target.value)">
-    <option value="" selected disabled hidden>יישובים</option>
-    <option *ngFor="let yeshuv of yeshuvim " [value]='yeshuv'>
-         {{yeshuv}}
-    </option>
-</select>
+<div class="wrapQues">
+    <div class="row" class="header">
+        <h1> הצגת משתמשים ואזוריהם</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-3">
+            <select class="myselect" (change)="ezorSelect($event)">
+                <option value="" selected disabled hidden>אזורים</option>
+                <option [value]=ezor.code *ngFor="let ezor  of ezorim; let i=index">
+                    {{ezor.desc}}
+                </option>
+            </select>
+        </div>
+        <div class="col-3">
+            <select class="myselect" (change)="merchavSelect($event)">
+                <option selected disabled hidden>מרחבים</option>
+                <option [value]=i *ngFor="let merchav of myData.merchavim ;let i=index">
+                    {{merchav.desc}}
+                </option>
+            </select>
+        </div>
+        <div class="col-3">
+            <select class="myselect" (change)="yeshuvSelect($event)">
+                <option value="" selected disabled hidden>יישובים</option>
+                <option [value]=i *ngFor="let yeshuv of myData.yeshuvim; let i=index ">
+                    {{yeshuv.desc}}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="padding: center;">
+        <button (click)="clickpepole(tableChild)" style="text-align: center;">שליפת אנשי האיזור הרלוונטיים</button>
+    </div>
+    <div class="row">
+        <table *ngIf="selectedPepole" class="table table-sm" >
+            <TR>
+                <TH COLSPAN="4">
+                    <H3><BR>האוכלסייה הרלוונטית</H3>
+                </TH>
+            </TR>
+            <tr>
+                <th>מזהה</th>
+                <th>שם פרטי</th>
+                <th>משפחה</th>
+                <th>כתובת</th>
+            </tr>
+            <tr style="cursor: pointer;" *ngFor="let man of myMan" (click)="clickChild(man,tableChild)">
+                <td>{{man.ID}}</td>
+                <td>{{man.firstName}}</td>
+                <td>{{man.lastname}}</td>
+                <td>{{man.Address}}</td>
+            </tr>
+        </table>
+        <table *ngIf="selectedMen" class="table table-sm">
+            <thead>
+                <TR>
+                    <TH COLSPAN="4">
+                        <H3><BR>הילדים הרלוונטיים</H3>
+                    </TH>
+                </TR>
+                <tr>
+                    <th> מזהה של הילד</th>
+                    <th> שם פרטי של הילד</th>
+                    <th>משפחה של הילד</th>
+                    <th>כתובת של הילד</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="cursor: pointer;" *ngFor="let man of myManChild">
+                    <td>{{man.ID}}</td>
+                    <td>{{man.firstName}}</td>
+                    <td>{{man.lastname}}</td>
+                    <td>{{man.Address}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div #tableChild></div>
+</div>
